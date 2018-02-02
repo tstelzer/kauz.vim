@@ -1,0 +1,29 @@
+#!/bin/zsh
+
+set -uf -o pipefail
+
+typeset -A colors
+
+colors[foreground_light]="#ffffff"
+colors[foreground]="#d4d4d4"
+colors[foreground_dark]="#a8a8a8"
+colors[neutral]="#808080"
+colors[background_light]="#3a3a3a"
+colors[background]="#1e1e1e"
+colors[background_dark]="#1c1c1c"
+colors[red_dark]="#621d29"
+colors[red_light]="#b95c6c"
+colors[green_dark]="#2d5a1a"
+colors[green_light]="#a0be93"
+colors[yellow_dark]="#cd9731"
+colors[yellow_light]="#ffd78a"
+colors[blue_dark]="#042037"
+colors[blue_light]="#4980ad"
+colors[magenta_dark]="#894582"
+colors[magenta_light]="#f5e3f4"
+colors[cyan_dark]="#109f83"
+colors[cyan_light]="#acf0e3"
+
+for name color in ${(kv)colors}; do
+    convert -size 100x20 xc:${color} ${name}.png
+done
