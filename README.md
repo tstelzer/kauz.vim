@@ -1,8 +1,8 @@
 # KAUZ.vim
 
-Another dark color scheme for [vim](https://www.vim.org).
-Unlike [welpe](https://www.github.com/tstelzer/welpe.vim), kauz is making
-use of all available colors, not limiting itself to the 256 spectrum.
+Another dark color scheme for [vim](https://www.vim.org), inspired by VSCs
+Dark++. Unlike [welpe](https://www.github.com/tstelzer/welpe.vim), kauz is
+making use of all available colors, not limiting itself to the 256 spectrum.
 
 ## PALETTE
 
