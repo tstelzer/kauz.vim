@@ -118,12 +118,12 @@ call s:H("Question", s:cyan_light, "", "bold", "")
 call s:H("Search", s:background_dark, s:yellow_light, "", "")
 call s:H("SignColumn", s:foreground_light, s:background, "", "")
 call s:H("SpecialKey", s:yellow_light, "", "", "")
-call s:H("SpellBad", s:red_light, "", "reverse", s:red_light)
-call s:H("SpellRare", s:green_light, "", "reverse", s:green_light)
-call s:H("SpellCap", s:blue_light, "", "reverse", s:blue_light)
-call s:H("SpellLocal", "", "", "reverse", "")
+call s:H("SpellBad", s:background, s:red_light, "", "")
+call s:H("SpellRare", s:background, s:green_light, "", "")
+call s:H("SpellCap", s:background, s:blue_light, "", "")
+call s:H("SpellLocal", s:background, s:yellow_light, "", "")
 call s:H("StatusLine", s:foreground, s:blue_dark, "", "")
-call s:H("StatusLineNC", s:neutral, s:background_dark, "", "")
+call s:H("StatusLineNC", s:neutral, s:background, "", "")
 call s:H("TabLineSel", s:foreground_dark, s:background_dark, "", "")
 call s:H("TabLine", s:neutral, s:foreground, "", "")
 call s:H("TabLineFill", s:background_dark, s:foreground_dark, "", "")
@@ -179,13 +179,13 @@ call s:H("Special", s:magenta_light, "", "", "")
 " call s:H("Tag", s:tag, "", "")
 call s:H("Delimiter", "", "", "", "")
 " call s:H("SpecialComment", s:specialcomment, "", "")
-call s:H("Debug", s:yellow_light, s:background_dark, "", "")
+call s:H("Debug", s:yellow_light, s:background, "", "")
 
 call s:H("Underlined", "", "", "", "")
 
 call s:H("Ignore", s:foreground_dark, "", "", "")
 
-call s:H("Error", s:red_light, s:background_dark, "", "")
+call s:H("Error", s:red_light, s:background, "", "")
 
 call s:H("Todo", s:foreground_light, s:background_light, "bold", "")
 
@@ -194,7 +194,7 @@ call s:H("Todo", s:foreground_light, s:background_light, "bold", "")
 " -----------------------------------------------------------------------------
 
 hi link Noise Normal
-call s:H("Warning", s:yellow_light, s:background_dark, "", "")
+call s:H("Warning", s:yellow_light, s:background, "", "")
 hi link OptionalParameters Normal
 
 call s:H("User1", s:background_dark, s:yellow_light, "", "")
