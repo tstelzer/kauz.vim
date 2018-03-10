@@ -103,8 +103,8 @@ call s:H("DiffText", "", s:blue_dark, "", "")
 call s:H("Directory", s:blue_light, "", "", "")
 call s:H("ErrorMsg", s:red_light, "", "bold", "")
 call s:H("FoldColumn", "", s:background, "", "")
-call s:H("Folded", s:foreground, s:background_light, "", "")
-call s:H("IncSearch", s:background_dark, s:yellow_light, "", "")
+call s:H("Folded", s:cyan_light, s:background, "", "")
+call s:H("IncSearch", s:background_dark, s:yellow_dark, "", "")
 call s:H("LineNr", s:neutral, s:background, "", "")
 call s:H("MatchParen", s:yellow_light, s:background_light, "bold", "")
 call s:H("ModeMsg", s:blue_light, s:background, "", "")
@@ -307,7 +307,7 @@ hi! link SneakScope IncSearch
 " INCSEARCH {{{
 " -----------------------------------------------------------------------------
 
-hi! link IncSearchCursor Visual
+hi! link IncSearchCursor IncSearch
 
 " }}}
 " JAVASCRIPT {{{
