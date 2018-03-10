@@ -66,7 +66,11 @@ Shell: zsh + tmux
 
 #### manual download
 
-- place [tstelzer/kauz.vim/master/colors/kauz.vim](https://raw.githubusercontent.com/tstelzer/kauz.vim/master/colors/kauz.vim) in `~/.vim/colors/`
+place [tstelzer/kauz.vim/master/colors/kauz.vim](https://raw.githubusercontent.com/tstelzer/kauz.vim/master/colors/kauz.vim) in `~/.vim/colors/`
+
+#### using [vim-plug](https://github.com/junegunn/vim-plug)
+
+Add `Plug 'tstelzer/kauz.vim'` to your `.vimrc`, see [vim-plug repository](https://github.com/junegunn/vim-plug) for more information.
 
 #### enable colorscheme
 
