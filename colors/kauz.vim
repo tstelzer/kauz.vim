@@ -28,32 +28,28 @@ let colors_name = "kauz"
 " ------------------------------------------------------------------------------
 
 if !exists("*s:H")
- function s:H(group,fg,bg,style,special)
+  function s:H(group,fg,bg,style,special)
 
- " On gVim 'guisp' is used to colorize underline/undercurl.
- " To reduce visual redundancy, we void the foreground color
- " if it mirrors the special color.
- let l:guifg = empty(a:fg)
- \ || !empty(a:special) && a:special == a:fg
- \ && a:style == "undercurl" || a:style == "underline"
- \ ? "NONE"
- \ : a:fg[0]
- let l:ctermfg = empty(a:fg) ? "NONE" : a:fg[1]
+    " On gVim 'guisp' is used to colorize underline/undercurl.
+    " To reduce visual redundancy, we void the foreground color
+    " if it mirrors the special color.
+    let l:guifg = empty(a:fg) ? "NONE" : a:fg[0]
+    let l:ctermfg = empty(a:fg) ? "NONE" : a:fg[1]
 
- let l:guibg = empty(a:bg) ? "NONE" : a:bg[0]
- let l:ctermbg = empty(a:bg) ? "NONE" : a:bg[1]
+    let l:guibg = empty(a:bg) ? "NONE" : a:bg[0]
+    let l:ctermbg = empty(a:bg) ? "NONE" : a:bg[1]
 
- let l:gstyle = empty(a:style) ? "NONE" : a:style
- let l:cstyle = empty(a:style) ? "NONE" : a:style
+    let l:gstyle = empty(a:style) ? "NONE" : a:style
+    let l:cstyle = empty(a:style) ? "NONE" : a:style
 
- let l:guisp = empty(a:special) ? s:red_light[0] : a:special[0]
+    let l:guisp = empty(a:special) ? s:red_light[0] : a:special[0]
 
- execute "hi ".a:group
- \ ." guifg=".l:guifg." ctermfg=".l:ctermfg
- \ ." guibg=".l:guibg." ctermbg=".l:ctermbg
- \ ." gui=".l:gstyle." cterm=".l:cstyle
- \ ." guisp=".l:guisp
- endfunction
+    execute "hi ".a:group
+          \ ." guifg=".l:guifg." ctermfg=".l:ctermfg
+          \ ." guibg=".l:guibg." ctermbg=".l:ctermbg
+          \ ." gui=".l:gstyle." cterm=".l:cstyle
+          \ ." guisp=".l:guisp
+  endfunction
 endif
 
 " }}}
