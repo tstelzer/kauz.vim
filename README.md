@@ -56,13 +56,16 @@ Shell: zsh + tmux
 
 [dotfiles](https://github.com/tstelzer/dotfiles)
 
-<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/dirvish-js.png" width=800>
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/js-fold.png" width=800>
 
-<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/diff-js.png" width=800>
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/js-errors.png" width=800>
 
-<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/clojure.png" width=800>
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/diff.png" width=800>
 
-<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/vimrc-fold.png" width=800>
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/clojure-zsh-markdown.png" width=800>
+
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/html-scss-fold.png" width=800>
+
 
 #### manual download
 
