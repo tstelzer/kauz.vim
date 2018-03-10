@@ -47,7 +47,22 @@ available colors, not limiting itself to the 256 spectrum.
 
 ## PREVIEW
 
-TODO
+```
+OS: Fedora 27
+WM: i3wm
+Terminal: Alacritty
+Shell: zsh + tmux
+```
+
+[dotfiles](https://github.com/tstelzer/dotfiles)
+
+![preview dirvish and javascript](preview/dirvish-js.png)
+
+![preview diff javascript](preview/diff-js.png)
+
+![preview clojure](preview/clojure.png)
+
+![preview vimrc with folding](preview/vimrc-fold.png)
 
 #### manual download
 
