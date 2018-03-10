@@ -56,13 +56,13 @@ Shell: zsh + tmux
 
 [dotfiles](https://github.com/tstelzer/dotfiles)
 
-![preview dirvish and javascript](preview/dirvish-js.png)
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/dirvish-js.png" width=800>
 
-![preview diff javascript](preview/diff-js.png)
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/diff-js.png" width=800>
 
-![preview clojure](preview/clojure.png)
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/clojure.png" width=800>
 
-![preview vimrc with folding](preview/vimrc-fold.png)
+<img src="https://raw.githubusercontent.com/tstelzer/kauz.vim/master/preview/vimrc-fold.png" width=800>
 
 #### manual download
 
