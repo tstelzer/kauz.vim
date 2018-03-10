@@ -79,7 +79,7 @@ let s:blue_dark = ['#042037', 18, 12, 4]
 let s:blue_light = ['#4980ad', 69, 4, 4]
 
 let s:magenta_dark = ['#894582', 92, 5, 5]
-let s:magenta_light = ['#f5e3f4', 224, 13, 5]
+let s:magenta_light = ['#dbb0d7', 224, 13, 5]
 
 let s:cyan_dark = ['#109f83', 81, 14, 6]
 let s:cyan_light = ['#acf0e3', 195, 14, 6]
@@ -118,10 +118,10 @@ call s:H("Question", s:cyan_light, "", "bold", "")
 call s:H("Search", s:background_dark, s:yellow_light, "", "")
 call s:H("SignColumn", s:foreground_light, s:background, "", "")
 call s:H("SpecialKey", s:yellow_light, "", "", "")
-call s:H("SpellBad", s:red_light, "", "undercurl", s:red_light)
-call s:H("SpellRare", s:green_light, "", "undercurl", s:green_light)
-call s:H("SpellCap", s:blue_light, "", "undercurl", s:blue_light)
-call s:H("SpellLocal", "", "", "undercurl", "")
+call s:H("SpellBad", s:red_light, "", "reverse", s:red_light)
+call s:H("SpellRare", s:green_light, "", "reverse", s:green_light)
+call s:H("SpellCap", s:blue_light, "", "reverse", s:blue_light)
+call s:H("SpellLocal", "", "", "reverse", "")
 call s:H("StatusLine", s:foreground, s:blue_dark, "", "")
 call s:H("StatusLineNC", s:neutral, s:background_dark, "", "")
 call s:H("TabLineSel", s:foreground_dark, s:background_dark, "", "")
@@ -129,7 +129,7 @@ call s:H("TabLine", s:neutral, s:foreground, "", "")
 call s:H("TabLineFill", s:background_dark, s:foreground_dark, "", "")
 call s:H("Title", "", "", "bold", "")
 call s:H("VertSplit", s:neutral, "", "", "")
-call s:H("Visual", "", "", "reverse", "")
+call s:H("Visual", "", s:background_light, "", "")
 call s:H("WildMenu", s:magenta_light, "", "", "")
 call s:H("WarningMsg", s:red_light, "", "", "")
 
@@ -139,7 +139,7 @@ call s:H("WarningMsg", s:red_light, "", "", "")
 
 call s:H("Comment", s:neutral, "", "", "")
 
-call s:H("Constant", s:cyan_light, "", "", "")
+call s:H("Constant", s:magenta_light, "", "", "")
 " the following groups inherit constant if commented out
 call s:H("String", s:green_light, "", "", "")
 call s:H("Character", "", "", "bold", "")
@@ -147,11 +147,11 @@ call s:H("Number", "", "", "bold", "")
 " call s:H("Boolean", s:boolean, "", "")
 call s:H("Float", "", "", "bold", "")
 
-call s:H("Identifier", s:red_light, "", "", "")
+call s:H("Identifier", "", "", "", "")
 " the following groups inherit identifier if commented out
-call s:H("Function", s:yellow_light, "", "", "")
+call s:H("Function", s:yellow_dark, "", "", "")
 
-call s:H("Statement", s:blue_light, "", "", "")
+call s:H("Statement", s:red_light, "", "", "")
 " the following groups inherit statement if commented out
 " call s:H("Conditional", s:statement, "", "")
 " call s:H("Repeat", s:repeat, "", "")
@@ -167,9 +167,9 @@ call s:H("PreProc", s:cyan_light, "", "", "")
 " call s:H("Macro", s:macro, "", "")
 " call s:H("PreCondit", s:precondit, "", "")
 
-call s:H("Type", s:yellow_light, "", "", "")
+call s:H("Type", "", "", "", "")
 " the following groups inherit type if commented out
-" call s:H("StorageClass", s:storageclass, "", "")
+call s:H("StorageClass", s:blue_light, "", "", "")
 " call s:H("Structure", s:structure, "", "")
 " call s:H("Typedef", s:typedef, "", "")
 
@@ -181,9 +181,9 @@ call s:H("Delimiter", "", "", "", "")
 " call s:H("SpecialComment", s:specialcomment, "", "")
 call s:H("Debug", s:yellow_light, s:background_dark, "", "")
 
-call s:H("Underlined", s:blue_light, "", "underline", "")
+call s:H("Underlined", "", "", "", "")
 
-call s:H("Ignore", "", "", "", "")
+call s:H("Ignore", s:foreground_dark, "", "", "")
 
 call s:H("Error", s:red_light, s:background_dark, "", "")
 
@@ -230,8 +230,8 @@ hi! link vimCmdSep Delimiter
 " -----------------------------------------------------------------------------
 " recommended https://github.com/othree/html5.vim
 
-call s:H("htmlBold", "", "", "bold", "")
-call s:H("htmlItalic", "", "", "italic", "")
+call s:H("htmlBold", s:foreground_light, "", "bold", "")
+call s:H("htmlItalic", s:foreground_light, "", "italic", "")
 hi! link htmlTag Statement
 hi! link htmlTagName htmlTag
 hi! link htmlTagN htmlTag
@@ -242,12 +242,20 @@ hi! link htmlSpecialChar Character
 " MARKDOWN {{{
 " -----------------------------------------------------------------------------
 
+call s:H("mkdItalic", s:foreground_dark, "" , "", "")
+call s:H("mkdBold", s:foreground_dark, "" , "", "")
+call s:H("mkdBold", s:foreground_dark, "" , "", "")
+hi! link mkdListItem Ignore
+hi! link mkdListItem Ignore
+hi! link mkdNonListItemBlock Ignore
+
 call s:H("markdownCode", s:foreground_light, s:background_light, "", "")
 hi! link markdownCodeBlock markdownCode
-hi! link markdownItalicDelimiter Noise
-hi! link markdownBoldDelimiter Noise
+hi! link markdownItalicDelimiter mkdItalic
+hi! link markdownBoldDelimiter mkdBold
 hi! link markdownUrl String
 hi! link markdownItalic htmlItalic
+
 
 " }}}
 " ASCIIDOC {{{
@@ -308,8 +316,15 @@ hi! link IncSearchCursor Visual
 
 hi! link jsFuncCall Function
 hi! link jsFunction Function
+hi! link jsRegexpString Constant
 hi! link jsParens Delimiter
 hi! link jsVariableDef Identifier
+hi! link jsFuncArgs Identifier
+hi! link jsGlobalNodeObjects PreProc
+hi! link jsGlobalObjects PreProc
+hi! link jsUndefined Constant
+hi! link jsNull Constant
+
 hi! link javaScriptValue Constant
 hi! link javaScriptTemplateVar StringDelim
 hi! link javaScriptTemplateDelim Identifier
@@ -426,5 +441,16 @@ hi! link snipLeadingSpaces Noise
 
 hi! link DiffAdded DiffAdd
 hi! link diffRemoved DiffDelete
+
+" }}}
+" CLOJURE {{{
+" -----------------------------------------------------------------------------
+
+hi! link clojureSymbol Identifier
+hi! link clojureKeyword StorageClass
+hi! link clojureSpecial Function
+hi! link clojureDefine Function
+hi! link clojureMacro Function
+hi! link clojureVarArg Noise
 
 " }}}
