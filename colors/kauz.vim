@@ -450,7 +450,7 @@ hi! link diffRemoved DiffDelete
 " -----------------------------------------------------------------------------
 
 hi! link clojureSymbol Identifier
-hi! link clojureKeyword StorageClass
+hi! link clojureKeyword Keyword
 hi! link clojureSpecial Function
 hi! link clojureDefine Function
 hi! link clojureMacro Function
