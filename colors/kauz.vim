@@ -187,7 +187,7 @@ call s:H("Ignore", s:foreground_dark, "", "", "")
 
 call s:H("Error", s:red_light, s:background, "", "")
 
-call s:H("Todo", s:foreground_light, s:background_light, "bold", "")
+call s:H("Todo", s:magenta_light, "", "bold", "")
 
 " }}}
 " HELPER SYNTAX {{{
