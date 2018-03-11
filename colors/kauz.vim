@@ -242,20 +242,24 @@ hi! link htmlSpecialChar Character
 " MARKDOWN {{{
 " -----------------------------------------------------------------------------
 
-call s:H("mkdItalic", s:foreground_dark, "" , "", "")
-call s:H("mkdBold", s:foreground_dark, "" , "", "")
-call s:H("mkdBold", s:foreground_dark, "" , "", "")
-hi! link mkdListItem Ignore
-hi! link mkdListItem Ignore
-hi! link mkdNonListItemBlock Ignore
-
-call s:H("markdownCode", s:foreground_light, s:background_light, "", "")
+call s:H("markdownCode", s:background_dark, s:foreground_dark, "", "")
 hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter mkdItalic
 hi! link markdownBoldDelimiter mkdBold
 hi! link markdownUrl String
 hi! link markdownItalic htmlItalic
 
+" }}}
+" PLASTICBOY MARKDOWN {{{
+" -----------------------------------------------------------------------------
+
+call s:H("mkdItalic", s:foreground_dark, "" , "", "")
+call s:H("mkdBold", s:foreground_dark, "" , "", "")
+call s:H("mkdBold", s:foreground_dark, "" , "", "")
+hi! link mkdCode markdownCode
+" hi! link mkdListItem Ignore
+" hi! link mkdListItem Ignore
+" hi! link mkdNonListItemBlock Normal
 
 " }}}
 " ASCIIDOC {{{
