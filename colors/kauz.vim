@@ -157,7 +157,7 @@ call s:H("Statement", s:red_light, "", "", "")
 " call s:H("Repeat", s:repeat, "", "")
 " call s:H("Label", s:label, "", "")
 call s:H("Operator", "", "", "", "")
-call s:H("Keyword", s:magenta_light, "", "", "")
+call s:H("Keyword", s:blue_light, "", "", "")
 " call s:H("Exception", s:exception, "", "")
 
 call s:H("PreProc", s:cyan_light, "", "", "")
@@ -316,23 +316,22 @@ hi! link IncSearchCursor IncSearch
 " }}}
 " JAVASCRIPT {{{
 " -----------------------------------------------------------------------------
+
+hi! link javaScriptBraces Delimiter
+hi! link javaScriptMessage Noise
+hi! link javaScriptNumber Number
+
 " recommended https://github.com/pangloss/vim-javascript
 
-hi! link jsFuncCall Function
-hi! link jsFunction Function
-hi! link jsRegexpString Constant
-hi! link jsParens Delimiter
-hi! link jsVariableDef Identifier
-hi! link jsFuncArgs Identifier
+hi! link jsFunction Keyword
 hi! link jsGlobalNodeObjects PreProc
 hi! link jsGlobalObjects PreProc
+hi! link jsStorageClass StorageClass
+hi! link jsFuncCall Function
+hi! link jsFuncName Function
+hi! link jsArrowFunction Statement
 hi! link jsUndefined Constant
 hi! link jsNull Constant
-
-hi! link javaScriptValue Constant
-hi! link javaScriptTemplateVar StringDelim
-hi! link javaScriptTemplateDelim Identifier
-hi! link javaScriptTemplateString String
 
 " }}}
 " PYTHON {{{
