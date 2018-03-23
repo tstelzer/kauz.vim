@@ -62,7 +62,7 @@ let s:foreground_dark = [ '#a8a8a8', 250, 15, 7 ]
 
 let s:neutral = [ '#808080', 244, 7, 7]
 
-let s:background_light = [ '#3a3a3a', 237, 0, 0]
+let s:background_light = [ '#323b3c', 237, 0, 0]
 let s:background = ['#1e1e1e', 17, 4, 4]
 let s:background_dark = [ '#1c1c1c', 234, 0, 0 ]
 
@@ -75,7 +75,7 @@ let s:green_light = ['#a0be93', 120, 2, 2]
 let s:yellow_dark = ['#cd9731', 214, 3, 3]
 let s:yellow_light = ['#ffd78a', 229, 11, 3]
 
-let s:blue_dark = ['#042037', 18, 12, 4]
+let s:blue_dark = ['#123850', 18, 12, 4]
 let s:blue_light = ['#4980ad', 69, 4, 4]
 
 let s:magenta_dark = ['#894582', 92, 5, 5]
