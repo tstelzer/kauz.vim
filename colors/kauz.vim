@@ -242,7 +242,7 @@ hi! link htmlSpecialChar Character
 " MARKDOWN {{{
 " -----------------------------------------------------------------------------
 
-call s:H("markdownCode", s:background_dark, s:foreground_dark, "", "")
+call s:H("markdownCode", "", "", "inverse", "")
 hi! link markdownCodeBlock markdownCode
 hi! link markdownItalicDelimiter mkdItalic
 hi! link markdownBoldDelimiter mkdBold
@@ -257,9 +257,10 @@ call s:H("mkdItalic", s:foreground_dark, "" , "", "")
 call s:H("mkdBold", s:foreground_dark, "" , "", "")
 call s:H("mkdBold", s:foreground_dark, "" , "", "")
 hi! link mkdCode markdownCode
-" hi! link mkdListItem Ignore
-" hi! link mkdListItem Ignore
-" hi! link mkdNonListItemBlock Normal
+hi! link mkdCodeStart Ignore
+hi! link mkdCodeEnd Ignore
+hi! link mkdListItem Ignore
+hi! link mkdListItem Ignore
 
 " }}}
 " ASCIIDOC {{{
