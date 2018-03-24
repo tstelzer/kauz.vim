@@ -330,7 +330,7 @@ hi! link jsGlobalObjects PreProc
 hi! link jsStorageClass StorageClass
 hi! link jsFuncCall Function
 hi! link jsFuncName Function
-hi! link jsArrowFunction Statement
+hi! link jsArrowFunction Operator
 hi! link jsUndefined Constant
 hi! link jsNull Constant
 
