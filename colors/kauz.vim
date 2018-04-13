@@ -129,7 +129,7 @@ call s:H("TabLine", s:neutral, s:foreground, "", "")
 call s:H("TabLineFill", s:background_dark, s:foreground_dark, "", "")
 call s:H("Title", "", "", "bold", "")
 call s:H("VertSplit", s:neutral, "", "", "")
-call s:H("Visual", "", s:background_light, "", "")
+call s:H("Visual", "", "", "reverse", "")
 call s:H("WildMenu", s:magenta_light, "", "", "")
 call s:H("WarningMsg", s:red_light, "", "", "")
 
