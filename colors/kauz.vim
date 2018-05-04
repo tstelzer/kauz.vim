@@ -106,7 +106,7 @@ call s:H("FoldColumn", "", s:background, "", "")
 call s:H("Folded", s:cyan_light, s:background, "", "")
 call s:H("IncSearch", s:background_dark, s:yellow_dark, "", "")
 call s:H("LineNr", s:neutral, s:background, "", "")
-call s:H("MatchParen", s:yellow_light, s:background_light, "bold", "")
+call s:H("MatchParen", s:background_dark, s:yellow_dark, "bold", "")
 call s:H("ModeMsg", s:blue_light, s:background, "", "")
 call s:H("MoreMsg", s:blue_light, s:background, "", "")
 call s:H("NonText", s:neutral, "", "", "")
@@ -456,5 +456,24 @@ hi! link clojureSpecial Function
 hi! link clojureDefine Function
 hi! link clojureMacro Function
 hi! link clojureVarArg Noise
+" }}}
 
+" RAINBOW PARENS {{{
+" -----------------------------------------------------------------------------
+call s:H("rainbowParensShell16", s:foreground_light, "", "", "")
+call s:H("rainbowParensShell15", s:blue_light, "", "", "")
+call s:H("rainbowParensShell14", s:yellow_light, "", "", "")
+call s:H("rainbowParensShell13", s:green_light, "", "", "")
+call s:H("rainbowParensShell12", s:red_light, "", "", "")
+call s:H("rainbowParensShell11", s:cyan_light, "", "", "")
+call s:H("rainbowParensShell10", s:magenta_light, "", "", "")
+call s:H("rainbowParensShell9", s:foreground_light, "", "", "")
+call s:H("rainbowParensShell8", s:blue_light, "", "", "")
+call s:H("rainbowParensShell7", s:yellow_light, "", "", "")
+call s:H("rainbowParensShell6", s:green_light, "", "", "")
+call s:H("rainbowParensShell5", s:red_light, "", "", "")
+call s:H("rainbowParensShell4", s:cyan_light, "", "", "")
+call s:H("rainbowParensShell3", s:magenta_light, "", "", "")
+call s:H("rainbowParensShell2", s:foreground_light, "", "", "")
+call s:H("rainbowParensShell1", s:blue_light, "", "", "")
 " }}}
