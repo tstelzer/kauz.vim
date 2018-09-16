@@ -477,4 +477,13 @@ call s:H("rainbowParensShell3", s:magenta_light, "", "", "")
 call s:H("rainbowParensShell2", s:blue_light, "", "", "")
 call s:H("rainbowParensShell1", s:foreground_light, "", "", "")
 " }}}
+
 " }}}
+" WHICH-KEY {{{
+" -----------------------------------------------------------------------------
+
+call s:H("WhichKey", s:yellow_dark, "", "", "")
+call s:H("WhichKeySeperator", s:foreground_light, "", "", "")
+call s:H("WhichKeyGroup", s:foreground_light, s:yellow_dark, "", "")
+call s:H("WhichKeyDesc", s:foreground_light, "", "", "")
+
