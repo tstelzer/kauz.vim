@@ -75,7 +75,7 @@ let s:green_light = ['#a0be93', 120, 2, 2]
 let s:yellow_dark = ['#cd9731', 214, 3, 3]
 let s:yellow_light = ['#ffd78a', 229, 11, 3]
 
-let s:blue_dark = ['#123850', 18, 12, 4]
+let s:blue_dark = ['#123b50', 18, 12, 4]
 let s:blue_light = ['#4980ad', 69, 4, 4]
 
 let s:magenta_dark = ['#894582', 92, 5, 5]
