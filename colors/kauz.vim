@@ -62,7 +62,7 @@ let s:foreground_dark = [ '#a8a8a8', 250, 15, 7 ]
 
 let s:neutral = [ '#808080', 244, 7, 7]
 
-let s:background_light = [ '#323b3c', 237, 0, 0]
+let s:background_light = [ '#272727', 237, 0, 0]
 let s:background = ['#1e1e1e', 17, 4, 4]
 let s:background_dark = [ '#1c1c1c', 234, 0, 0 ]
 
@@ -76,12 +76,13 @@ let s:yellow_dark = ['#cd9731', 214, 3, 3]
 let s:yellow_light = ['#ffd78a', 229, 11, 3]
 
 let s:blue_dark = ['#123b50', 18, 12, 4]
+let s:blue = ['#264f78', 18, 12, 4]
 let s:blue_light = ['#4980ad', 69, 4, 4]
 
 let s:magenta_dark = ['#894582', 92, 5, 5]
 let s:magenta_light = ['#dbb0d7', 224, 13, 5]
 
-let s:cyan_dark = ['#109f83', 81, 14, 6]
+let s:cyan_dark = ['#16B495', 81, 14, 6]
 let s:cyan_light = ['#acf0e3', 195, 14, 6]
 
 " }}}
@@ -99,11 +100,11 @@ call s:H("CursorLineNr", s:foreground_light, s:background, "", "")
 call s:H("DiffAdd", "", s:green_dark, "", "")
 call s:H("DiffChange", "", s:blue_dark, "", "")
 call s:H("DiffDelete", "", s:red_dark, "", "")
-call s:H("DiffText", "", s:blue_dark, "", "")
+call s:H("DiffText", s:yellow_light, s:red_dark, "",  "")
 call s:H("Directory", s:blue_light, "", "", "")
 call s:H("ErrorMsg", s:red_light, "", "bold", "")
 call s:H("FoldColumn", "", s:background, "", "")
-call s:H("Folded", s:cyan_light, s:background, "", "")
+call s:H("Folded", s:cyan_light, s:background_dark, "", "")
 call s:H("IncSearch", s:background_dark, s:yellow_dark, "", "")
 call s:H("LineNr", s:neutral, s:background, "", "")
 call s:H("MatchParen", s:yellow_dark, "", "bold", "")
@@ -118,20 +119,20 @@ call s:H("Question", s:cyan_light, "", "bold", "")
 call s:H("Search", s:background_dark, s:yellow_light, "", "")
 call s:H("SignColumn", s:foreground_light, s:background, "", "")
 call s:H("SpecialKey", s:yellow_light, "", "", "")
-call s:H("SpellBad", s:background, s:red_light, "", "")
-call s:H("SpellRare", s:background, s:green_light, "", "")
-call s:H("SpellCap", s:background, s:blue_light, "", "")
-call s:H("SpellLocal", s:background, s:yellow_light, "", "")
+call s:H("SpellBad", s:red_light, "", "undercurl", "")
+call s:H("SpellRare", s:green_light, "", "underline", "")
+call s:H("SpellCap", s:blue_light, "", "underline", "")
+call s:H("SpellLocal", s:yellow_light, "", "underline", "")
 call s:H("StatusLine", s:foreground, s:blue_dark, "", "")
 call s:H("StatusLineNC", s:neutral, s:background, "", "")
 call s:H("TabLineSel", s:foreground_dark, s:background_dark, "", "")
 call s:H("TabLine", s:neutral, s:foreground, "", "")
-call s:H("TabLineFill", s:background_dark, s:foreground_dark, "", "")
+call s:H("TabLineFill", "", s:background_light, "", "")
 call s:H("Title", "", "", "bold", "")
 call s:H("VertSplit", s:neutral, "", "", "")
-call s:H("Visual", s:foreground_light, s:blue_light, "", "")
+call s:H("Visual", "", s:blue, "", "")
 call s:H("WildMenu", s:magenta_light, "", "", "")
-call s:H("WarningMsg", s:red_light, "", "", "")
+call s:H("WarningMsg", s:red_dark, s:yellow_dark, "", "")
 
 " }}}
 " SYNTAX {{{
@@ -167,10 +168,10 @@ call s:H("PreProc", s:cyan_light, "", "", "")
 " call s:H("Macro", s:macro, "", "")
 " call s:H("PreCondit", s:precondit, "", "")
 
-call s:H("Type", "", "", "", "")
+call s:H("Type", s:cyan_dark, "", "", "")
 " the following groups inherit type if commented out
 call s:H("StorageClass", s:blue_light, "", "", "")
-" call s:H("Structure", s:structure, "", "")
+call s:H("Structure", s:blue_light, "", "", "")
 " call s:H("Typedef", s:typedef, "", "")
 
 call s:H("Special", s:magenta_light, "", "", "")
@@ -185,7 +186,8 @@ call s:H("Underlined", "", "", "", "")
 
 call s:H("Ignore", s:foreground_dark, "", "", "")
 
-call s:H("Error", s:red_light, s:background, "", "")
+call s:H("Error", s:yellow_light, s:background, "", "")
+call s:H("ErrorMsg", s:yellow_light, s:red_dark, "", "")
 
 call s:H("Todo", s:magenta_light, "", "bold", "")
 
@@ -193,7 +195,8 @@ call s:H("Todo", s:magenta_light, "", "bold", "")
 " HELPER SYNTAX {{{
 " -----------------------------------------------------------------------------
 
-hi link Noise Normal
+call s:H("ReadOnly", s:background_dark, s:foreground_dark, "", "")
+call s:H("Noise", "", "", "", "")
 call s:H("Warning", s:yellow_light, s:background, "", "")
 hi link OptionalParameters Normal
 
@@ -335,16 +338,6 @@ hi! link jsUndefined Constant
 hi! link jsNull Constant
 
 " }}}
-" PYTHON {{{
-" -----------------------------------------------------------------------------
-" recommended https://github.com/purpleP/python-syntax
-
-hi! link pythonStrTemplate String
-hi! link pythonInstanceVariable Keyword
-hi! link pythonNone Keyword
-hi! link pythonBoolean Keyword
-
-" }}}
 " SCSS {{{
 " -----------------------------------------------------------------------------
 " recommended https://github.com/cakebaker/scss-syntax.vim
@@ -352,14 +345,6 @@ hi! link pythonBoolean Keyword
 hi! link scssMixinParams Delimiter
 hi! link scssSelectorChar Noise
 hi! link scssAmpersand Noise
-
-" }}}
-" AUTOHOTKEY {{{
-" -----------------------------------------------------------------------------
-
-hi! def link autohotkeyVariable Identifier
-hi! def link autohotkeyVariableDelimiter Delimiter
-hi! def link autohotkeyBuiltinVariable autohotkeyVariable
 
 " }}}
 " GIT {{{
@@ -391,20 +376,6 @@ hi! link pugClass Identifier
 
 hi! link DirvishPathTail Directory
 hi! link DirvishPathHead Comment
-
-" }}}
-" SYNTASTIC {{{
-" -----------------------------------------------------------------------------
-
-hi! link SyntasticErrorSign ErrorMsg
-hi! link SyntasticWarningSign Debug
-hi! link SyntasticStyleErrorSign ErrorMsg
-hi! link SyntasticStyleWarningSign Debug
-
-hi! link SyntasticErrorLine ErrorMsg
-hi! link SyntasticWarningLine Debug
-hi! link SyntasticStyleErrorLine ErrorMsg
-hi! link SyntasticStyleWarningLine Debug
 
 " }}}
 " ALE {{{
@@ -487,3 +458,16 @@ call s:H("WhichKeySeperator", s:foreground_light, "", "", "")
 call s:H("WhichKeyGroup", s:foreground_light, s:yellow_dark, "", "")
 call s:H("WhichKeyDesc", s:foreground_light, "", "", "")
 
+" }}}
+" HASKELL {{{
+" -----------------------------------------------------------------------------
+" neovimhaskell/haskell-vim
+
+call s:H("haskellIdentifier", s:cyan_dark, "", "", "")
+
+" }}}
+" TYPESCRIPT {{{
+" -----------------------------------------------------------------------------
+
+hi! link typescriptEndColons Noise
+hi! link typescriptBraces Noise
