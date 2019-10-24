@@ -64,9 +64,11 @@ let s:neutral = [ '#808080', 244, 7, 7]
 
 let s:background_light = [ '#272727', 237, 0, 0]
 let s:background = ['#1e1e1e', 17, 4, 4]
+let s:background_blue = ['#2A3649', 17, 4, 4]
 let s:background_dark = [ '#1c1c1c', 234, 0, 0 ]
 
 let s:red_dark = ['#621d29', 52, 1, 1]
+let s:red = ['#FB0101', 167, 1, 1]
 let s:red_light = ['#b95c6c', 167, 1, 1]
 
 let s:green_dark = ['#2d5a1a', 22, 2, 2]
@@ -75,7 +77,7 @@ let s:green_light = ['#a0be93', 120, 2, 2]
 let s:yellow_dark = ['#cd9731', 214, 3, 3]
 let s:yellow_light = ['#ffd78a', 229, 11, 3]
 
-let s:blue_dark = ['#123b50', 18, 12, 4]
+let s:blue_dark = ['#13283C', 18, 12, 4]
 let s:blue = ['#264f78', 18, 12, 4]
 let s:blue_light = ['#4980ad', 69, 4, 4]
 
@@ -471,3 +473,9 @@ call s:H("haskellIdentifier", s:cyan_dark, "", "", "")
 
 hi! link typescriptEndColons Noise
 hi! link typescriptBraces Noise
+
+" }}}
+" coc-nvim {{{
+" -----------------------------------------------------------------------------
+
+call s:H("CocHighlightText", "", s:background, "", "")
