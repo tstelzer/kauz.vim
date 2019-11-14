@@ -473,6 +473,34 @@ call s:H("haskellIdentifier", s:cyan_dark, "", "", "")
 
 hi! link typescriptEndColons Noise
 hi! link typescriptBraces Noise
+hi! link typescriptParamImpl Noise
+hi! link typescriptIdentifier Noise
+hi! link typescriptTemplateSB Noise
+hi! link typescriptPaymentShippingOptionProp Noise
+
+hi! link typescriptNodeGlobal jsGlobalNodeObjects
+hi! link typescriptGlobal jsGlobalObjects
+hi! link typescriptObjectLabel jsObjectKey
+hi! link typescriptVariable jsStorageClass
+hi! link typescriptHeadersMethod jsFuncCall
+hi! link typescriptProp jsObjectProp
+hi! link typescriptBOMNavigatorProp jsObjectValue
+hi! link typescriptDOMFormProp jsObjectValue
+hi! link typescriptDOMEventProp jsObjectValue
+hi! link typescriptFileReaderProp jsObjectValue
+hi! link typescriptFuncCallArg jsFuncArgs
+hi! link typescriptArrowFuncCallArg jsFuncArgs
+hi! link typescriptCall jsFuncArgs
+
+hi! link typescriptFunctionMethod jsFuncCall
+hi! link typescriptPromiseMethod jsFuncCall
+hi! link typescriptBOMWindowMethod jsFuncCall
+hi! link typescriptBOMLocationMethod jsFuncCall
+hi! link typescriptConsoleMethod jsFuncCall
+hi! link typescriptPromiseStaticMethod jsFuncCall
+hi! link typescriptGlobalMethod jsFuncCall
+hi! link typescriptObjectStaticMethod jsFuncCall
+hi! link typescriptES6SetMethod jsFuncCall
 
 " }}}
 " coc-nvim {{{
