@@ -8,7 +8,7 @@
 " File: kauz.vim
 " Description: Another dark colorscheme for vim.
 " Author: Timm Stelzer <timmstelzer@gmail.com>
-" Source: https://github.com/tstelzer/welpe.vim
+" Source: https://github.com/tstelzer/kauz.vim
 " ------------------------------------------------------------------------------
 " GLOBAL SETTINGS {{{
 " ------------------------------------------------------------------------------
@@ -72,6 +72,7 @@ let s:red = ['#FB0101', 167, 1, 1]
 let s:red_light = ['#b95c6c', 167, 1, 1]
 
 let s:green_dark = ['#2d5a1a', 22, 2, 2]
+let s:green = ['#6A9955', 22, 2, 2]
 let s:green_light = ['#a0be93', 120, 2, 2]
 
 let s:yellow_dark = ['#cd9731', 214, 3, 3]
@@ -140,9 +141,9 @@ call s:H("WarningMsg", s:red_dark, s:yellow_dark, "", "")
 " SYNTAX {{{
 " -----------------------------------------------------------------------------
 
-call s:H("Comment", s:neutral, "", "", "")
+call s:H("Comment", s:green, "", "", "")
 
-call s:H("Constant", s:magenta_light, "", "", "")
+call s:H("Constant", s:red_light, "", "", "")
 " the following groups inherit constant if commented out
 call s:H("String", s:green_light, "", "", "")
 call s:H("Character", "", "", "bold", "")
@@ -152,9 +153,9 @@ call s:H("Float", "", "", "bold", "")
 
 call s:H("Identifier", "", "", "", "")
 " the following groups inherit identifier if commented out
-call s:H("Function", s:yellow_dark, "", "", "")
+call s:H("Function", "", "", "", "")
 
-call s:H("Statement", s:red_light, "", "", "")
+call s:H("Statement", s:blue_light, "", "", "")
 " the following groups inherit statement if commented out
 " call s:H("Conditional", s:statement, "", "")
 " call s:H("Repeat", s:repeat, "", "")
@@ -163,7 +164,7 @@ call s:H("Operator", "", "", "", "")
 call s:H("Keyword", s:blue_light, "", "", "")
 " call s:H("Exception", s:exception, "", "")
 
-call s:H("PreProc", s:cyan_light, "", "", "")
+call s:H("PreProc", s:blue_light, "", "", "")
 " the following groups inherit preproc if commented out
 " call s:H("Include", s:include, "", "")
 " call s:H("Define", s:define, "", "")
@@ -199,6 +200,7 @@ call s:H("Todo", s:magenta_light, "", "bold", "")
 
 call s:H("ReadOnly", s:background_dark, s:foreground_dark, "", "")
 call s:H("Noise", "", "", "", "")
+call s:H("Fade", s:foreground_dark, "", "", "")
 call s:H("Warning", s:yellow_light, s:background, "", "")
 hi link OptionalParameters Normal
 
@@ -330,14 +332,15 @@ hi! link javaScriptNumber Number
 " recommended https://github.com/pangloss/vim-javascript
 
 hi! link jsFunction Keyword
-hi! link jsGlobalNodeObjects PreProc
-hi! link jsGlobalObjects PreProc
+hi! link jsGlobalNodeObjects Noise
+hi! link jsGlobalObjects Noise
 hi! link jsStorageClass StorageClass
 hi! link jsFuncCall Function
 hi! link jsFuncName Function
 hi! link jsArrowFunction Operator
 hi! link jsUndefined Constant
 hi! link jsNull Constant
+hi! link jsBuiltins Noise
 
 " }}}
 " SCSS {{{
@@ -471,12 +474,17 @@ call s:H("haskellIdentifier", s:cyan_dark, "", "", "")
 " TYPESCRIPT {{{
 " -----------------------------------------------------------------------------
 
-hi! link typescriptEndColons Noise
-hi! link typescriptBraces Noise
-hi! link typescriptParamImpl Noise
-hi! link typescriptIdentifier Noise
-hi! link typescriptTemplateSB Noise
-hi! link typescriptPaymentShippingOptionProp Noise
+hi! link typescriptEndColons Normal
+hi! link typescriptBraces Normal
+hi! link typescriptParamImpl Normal
+hi! link typescriptIdentifier Normal
+hi! link typescriptTemplateSB Normal
+hi! link typescriptPaymentShippingOptionProp Normal
+hi! link typescriptMember Normal
+
+hi! link typescriptImport Statement
+hi! link typescriptCastKeyword Statement
+hi! link typescriptExport Statement
 
 hi! link typescriptNodeGlobal jsGlobalNodeObjects
 hi! link typescriptGlobal jsGlobalObjects
@@ -490,6 +498,7 @@ hi! link typescriptDOMEventProp jsObjectValue
 hi! link typescriptFileReaderProp jsObjectValue
 hi! link typescriptFuncCallArg jsFuncArgs
 hi! link typescriptArrowFuncCallArg jsFuncArgs
+hi! link typescriptArrowFunc Operator
 hi! link typescriptCall jsFuncArgs
 
 hi! link typescriptFunctionMethod jsFuncCall
@@ -501,6 +510,7 @@ hi! link typescriptPromiseStaticMethod jsFuncCall
 hi! link typescriptGlobalMethod jsFuncCall
 hi! link typescriptObjectStaticMethod jsFuncCall
 hi! link typescriptES6SetMethod jsFuncCall
+hi! link typescriptObjectType Type
 
 " }}}
 " coc-nvim {{{
